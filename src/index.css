@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	.overflow-overlay {
+		overflow: overlay;
+	}
+}
+
+@layer utilities {
+	.apple-scrollbar::-webkit-scrollbar {
+		width: 8px;
+	}
+	.apple-scrollbar::-webkit-scrollbar-thumb {
+		background-color: #757575;
+		border-radius: 9999px;
+	}
+	.apple-scrollbar::-webkit-scrollbar-button {
+		display: none;
+	}
+	.apple-scrollbar::-webkit-scrollbar-thumb:hover {
+		background-color: #979797;
+	}
+	.apple-scrollbar::-webkit-scrollbar-thumb:active {
+		background-color: #6e6e6e;
+	}
+}
+
+@layer components {
+	.line-t {
+		@apply relative after:absolute before:top-0 before:left-0 before:block before:w-full before:h-px before:bg-zinc-400 before:bg-opacity-50;
+	}
+	.line-b {
+		@apply relative after:absolute after:bottom-0 after:left-0 after:block after:w-full after:h-px after:bg-zinc-400 after:bg-opacity-50;
+	}
+}
+
+body {
+	@apply font-lato overflow-hidden;
+}
